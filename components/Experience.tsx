@@ -7,6 +7,7 @@ export type ExperienceItem = {
   location: string;
   period: string;
   role: string;
+  images?: string[];
   details: string[];
 };
 

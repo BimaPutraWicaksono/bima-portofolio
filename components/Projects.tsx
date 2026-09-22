@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 export type Project = {
   title: string;
   technologies: string[];
+  images?: string[];
   description: string;
   focus: string[];
 };
