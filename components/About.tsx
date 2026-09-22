@@ -36,20 +36,17 @@ export function About() {
       <div className="mb-10 flex items-center gap-3">
         <span className="h-px flex-1 bg-white/10" />
         <p className="text-xs font-medium uppercase tracking-[0.24em] text-zinc-400">
-          01 / About
+          GET TO KNOW ME
         </p>
         <span className="h-px flex-1 bg-white/10" />
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
         <div>
-          <h2 className="text-3xl font-semibold tracking-[-0.06em] text-white sm:text-4xl lg:text-5xl">
-            Building systems that connect business needs with technology.
+          <h2 className="mb-6 text-4xl font-semibold tracking-[-0.06em] text-white sm:text-5xl lg:text-[2.8rem]">
+            About Me
           </h2>
-        </div>
-
-        <div className="space-y-5">
-          <div className="space-y-4 text-base leading-8 text-zinc-300">
+          <div className="space-y-5 text-base leading-8 text-zinc-300">
             <p>
               IT graduate with experience in information systems development,
               requirements analysis, data processing, and business process
@@ -62,16 +59,33 @@ export function About() {
             </p>
           </div>
 
-          <div className="grid gap-4 pt-2 sm:grid-cols-2">
+          <div className="mt-7 flex flex-wrap gap-2.5">
             {focusAreas.map((area) => (
-              <div
+              <span
                 key={area.title}
-                className="rounded-2xl border border-white/10 bg-[#10151a] p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:bg-[#111930]"
+                className="rounded-full border border-[#e0bbe4]/50 bg-white/65 px-3.5 py-2 text-sm font-medium text-[#6d6875] shadow-[0_6px_16px_rgba(160,140,190,0.08)]"
               >
-                <p className="text-base font-semibold text-white">{area.title}</p>
-                <p className="mt-2 text-sm leading-6 text-zinc-400">{area.text}</p>
-              </div>
+                {area.title}
+              </span>
             ))}
+          </div>
+        </div>
+
+        <div className="reference-surface rounded-[28px] p-7 sm:p-8">
+          <h3 className="mb-5 text-lg font-bold text-[#4a4453]">Quick Info</h3>
+          <div className="divide-y divide-[#e0bbe4]/35">
+            <div className="flex gap-4 py-4 first:pt-0">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#e0bbe4] to-[#cde7f0] text-sm text-white">ED</span>
+              <div><p className="text-[10px] font-bold tracking-[0.14em] text-[#a98fd9] uppercase">Education</p><p className="text-sm text-[#4a4453]">D4 Teknik Informatika · Politeknik Negeri Malang</p></div>
+            </div>
+            <div className="flex gap-4 py-4">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#fde2e4] to-[#e0bbe4] text-sm text-white">IT</span>
+              <div><p className="text-[10px] font-bold tracking-[0.14em] text-[#a98fd9] uppercase">Focus</p><p className="text-sm text-[#4a4453]">Information Technology · System Analysis</p></div>
+            </div>
+            <div className="flex gap-4 py-4">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#d8f3dc] to-[#cde7f0] text-sm text-white">LO</span>
+              <div><p className="text-[10px] font-bold tracking-[0.14em] text-[#a98fd9] uppercase">Location</p><p className="text-sm text-[#4a4453]">Batu, East Java, Indonesia</p></div>
+            </div>
           </div>
         </div>
       </div>

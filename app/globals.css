@@ -102,8 +102,45 @@ main section:not(#home) {
   padding: 120px 8vw !important;
 }
 
+main section:not(#home):nth-child(odd) {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+main section:not(#home):nth-child(even) {
+  background: rgba(253, 246, 251, 0.32);
+}
+
 main section:not(#home) > div {
   width: 100%;
+}
+
+main section:not(#home) > div > div:first-child {
+  display: block;
+  margin-bottom: 44px;
+}
+
+main section:not(#home) > div > div:first-child > span {
+  display: none;
+}
+
+main section:not(#home) > div > div:first-child > p {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #a98fb0 !important;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+main section:not(#home) > div > div:first-child > p::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #e0bbe4, #fde2e4);
 }
 
 main section:not(#home) h2 {
@@ -140,6 +177,11 @@ body [class*="bg-white/[0.02]"] {
 
 body [class*="border-white/10"] {
   border-color: rgba(224, 187, 228, 0.4) !important;
+}
+
+body [class*="bg-white/5"],
+body [class*="bg-white/[0.03]"] {
+  background: rgba(255, 255, 255, 0.6) !important;
 }
 
 body main section li > span:first-child {

@@ -182,15 +182,15 @@ const additionalExperience = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#090b10] text-zinc-100">
+    <div className="min-h-screen text-[#4a4453]">
       <Navbar />
 
       <main>
         <Hero />
         <About />
-        <Skills />
         <Experience items={experiences} />
         <Projects projects={featuredProjects} />
+        <Skills />
         <Education items={education} />
         <AdditionalExperience items={additionalExperience} />
         <Contact />

@@ -48,6 +48,13 @@ export function Hero() {
             >
               Contact Me
             </a>
+            <a
+              href="/cv.pdf"
+              download
+              className="inline-flex items-center justify-center rounded-full border border-[#a98fd9]/35 bg-transparent px-7 py-3.5 text-sm font-semibold text-[#a98fd9] transition-all hover:-translate-y-1 hover:bg-[#e0bbe4]/20"
+            >
+              Download CV
+            </a>
           </div>
 
           <div className="mt-8 flex items-center gap-3 text-sm text-[#6d6875]">

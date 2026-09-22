@@ -77,7 +77,7 @@ export function Skills() {
       <div className="mb-10 flex items-center gap-3">
         <span className="h-px flex-1 bg-white/10" />
         <p className="text-xs font-medium uppercase tracking-[0.24em] text-zinc-400">
-          02 / Skills
+          WHAT I KNOW
         </p>
         <span className="h-px flex-1 bg-white/10" />
       </div>

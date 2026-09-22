@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
@@ -75,7 +75,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-zinc-100 transition-colors hover:border-white/20 hover:bg-white/10 md:hidden"
+          className="inline-flex items-center justify-center rounded-full border border-[#e0bbe4]/50 bg-white/60 p-2 text-[#6d6875] transition-colors hover:border-[#a98fd9]/60 hover:bg-white md:hidden"
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((current) => !current)}
@@ -97,7 +97,7 @@ export function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
             aria-label="Mobile navigation"
-            className="overflow-hidden border-t border-white/10 bg-[#090b10] md:hidden"
+            className="overflow-hidden border-t border-[#e0bbe4]/35 bg-white/95 md:hidden"
           >
             <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4 sm:px-6">
               {navItems.map((item) => {
@@ -108,7 +108,7 @@ export function Navbar() {
                     key={item.href}
                     href={item.href}
                     className={`rounded-xl px-3 py-2 text-sm transition-colors ${
-                      isActive ? "bg-white/8 text-white" : "text-zinc-300 hover:bg-white/5 hover:text-white"
+                      isActive ? "bg-[#fde2e4] text-[#a98fd9]" : "text-[#6d6875] hover:bg-[#fdf6fb] hover:text-[#a98fd9]"
                     }`}
                     onClick={() => setMobileOpen(false)}
                   >
