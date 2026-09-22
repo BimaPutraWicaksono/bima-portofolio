@@ -1,12 +1,15 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { SectionLabel } from "@/components/SectionLabel";
+import { ImageCarousel } from "@/components/ImageCarousel";
 
 export type AdditionalExperienceItem = {
   title: string;
   location: string;
   period: string;
   role: string;
+  images?: string[];
   details: string[];
 };
 
@@ -28,9 +31,9 @@ export function AdditionalExperience({ items }: AdditionalExperienceProps) {
     >
       <div className="mb-10 flex items-center gap-3">
         <span className="h-px flex-1 bg-white/10" />
-        <p className="text-xs font-medium uppercase tracking-[0.24em] text-zinc-400">
-          RECOGNITION & ACTIVITIES
-        </p>
+        <SectionLabel>
+          ORGANIZATION
+        </SectionLabel>
         <span className="h-px flex-1 bg-white/10" />
       </div>
 
@@ -42,26 +45,31 @@ export function AdditionalExperience({ items }: AdditionalExperienceProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
-            className="rounded-2xl border border-white/10 bg-[#10151a] p-5"
+            className="organization-card rounded-2xl border border-white/10 bg-[#10151a] p-5"
           >
-            <div className="mb-4 flex items-start justify-between gap-3 border-b border-white/10 pb-4">
-              <div>
+            <div className="organization-card__content">
+              <div className="mb-4 border-b border-white/10 pb-4">
                 <h3 className="text-lg font-semibold text-white">{item.title}</h3>
                 <p className="mt-1 text-sm text-zinc-400">{item.location}</p>
+                <span className="mt-2 block text-xs uppercase tracking-[0.2em] text-zinc-500">{item.period}</span>
               </div>
-              <span className="text-xs uppercase tracking-[0.2em] text-zinc-500">{item.period}</span>
+
+              <p className="text-sm font-medium text-zinc-200">{item.role}</p>
+
+              <ul className="mt-4 space-y-2 text-sm leading-6 text-zinc-300">
+                {item.details.map((detail) => (
+                  <li key={detail} className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-zinc-400" />
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <p className="text-sm font-medium text-zinc-200">{item.role}</p>
-
-            <ul className="mt-4 space-y-2 text-sm leading-6 text-zinc-300">
-              {item.details.map((detail) => (
-                <li key={detail} className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-zinc-400" />
-                  <span>{detail}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="organization-card__media">
+              <p className="organization-card__media-label">Documentation</p>
+              <ImageCarousel images={item.images ?? []} alt={`${item.title} organization`} />
+            </div>
           </motion.article>
         ))}
       </div>

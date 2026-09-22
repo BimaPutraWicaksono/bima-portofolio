@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { ImageCarousel } from "@/components/ImageCarousel";
+import { SectionLabel } from "@/components/SectionLabel";
 
 export type Project = {
   title: string;
@@ -29,9 +30,9 @@ export function Projects({ projects }: ProjectsProps) {
     >
       <div className="mb-10 flex items-center gap-3">
         <span className="h-px flex-1 bg-white/10" />
-        <p className="text-xs font-medium uppercase tracking-[0.24em] text-zinc-400">
+        <SectionLabel>
           MY WORK
-        </p>
+        </SectionLabel>
         <span className="h-px flex-1 bg-white/10" />
       </div>
 

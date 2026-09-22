@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { SectionLabel } from "@/components/SectionLabel";
 
 const focusAreas = [
   {
@@ -35,17 +36,23 @@ export function About() {
     >
       <div className="mb-10 flex items-center gap-3">
         <span className="h-px flex-1 bg-white/10" />
-        <p className="text-xs font-medium uppercase tracking-[0.24em] text-zinc-400">
+        <SectionLabel>
           GET TO KNOW ME
-        </p>
+        </SectionLabel>
         <span className="h-px flex-1 bg-white/10" />
       </div>
 
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
         <div>
-          <h2 className="mb-6 text-4xl font-semibold tracking-[-0.06em] text-white sm:text-5xl lg:text-[2.8rem]">
+          <motion.h2
+            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.7 }}
+            transition={{ duration: 0.55, delay: 0.08, ease: "easeOut" }}
+            className="mb-6 text-4xl font-semibold tracking-[-0.06em] text-white sm:text-5xl lg:text-[2.8rem]"
+          >
             About Me
-          </h2>
+          </motion.h2>
           <div className="space-y-5 text-base leading-8 text-zinc-300">
             <p>
               IT graduate with experience in information systems development,

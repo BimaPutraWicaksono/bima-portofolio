@@ -181,6 +181,7 @@ const additionalExperience = [
     location: "Batu",
     period: "July 2020 – January 2026",
     role: "Owner – Operational / Production / Marketing",
+    images: ["/images/organization/zaafarani.svg"],
     details: [
       "Managed operations, production, stock, sales, administration, finance, and suppliers.",
       "Managed 10–15 product variants.",
@@ -192,6 +193,7 @@ const additionalExperience = [
     location: "Malang",
     period: "March 2023 – February 2024",
     role: "Head of External Affairs – Steering Committee",
+    images: ["/images/organization/hmti.svg"],
     details: [
       "Led 2 programs and 8 agendas.",
       "Participated in 5+ committees.",
@@ -203,6 +205,7 @@ const additionalExperience = [
     location: "Malang",
     period: "March 2022 – February 2023",
     role: "Organizing Committee",
+    images: ["/images/organization/dialog-dosen.svg", "/images/organization/hmti.svg"],
     details: [
       "Chief organizer of Dialog Dosen Mahasiswa involving 70+ students, 35+ lecturers, and 80+ committee members.",
       "Field coordinator for Malam Keakraban involving 195+ participants and 80+ committee members.",
@@ -213,6 +216,7 @@ const additionalExperience = [
     location: "Batu",
     period: "December 2024 – January 2025",
     role: "MC",
+    images: ["/images/organization/event.svg"],
     details: [
       "Hosted the event for 7,000+ attendees.",
     ],

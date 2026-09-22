@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { SectionLabel } from "@/components/SectionLabel";
 
 export function Contact() {
   const shouldReduceMotion = useReducedMotion();
@@ -17,9 +18,9 @@ export function Contact() {
       <div className="rounded-[28px] border border-white/10 bg-[#10151a] p-8 sm:p-10">
         <div className="mb-8 flex items-center gap-3">
           <span className="h-px flex-1 bg-white/10" />
-          <p className="text-xs font-medium uppercase tracking-[0.24em] text-zinc-400">
+          <SectionLabel>
             LET&apos;S CONNECT
-          </p>
+          </SectionLabel>
           <span className="h-px flex-1 bg-white/10" />
         </div>
 
@@ -28,9 +29,15 @@ export function Contact() {
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-400">
               Let&apos;s connect
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl lg:text-[2.6rem]">
+            <motion.h2
+              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.7 }}
+              transition={{ duration: 0.55, delay: 0.08, ease: "easeOut" }}
+              className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl lg:text-[2.6rem]"
+            >
               Let&apos;s build something useful.
-            </h2>
+            </motion.h2>
             <p className="mt-4 text-lg text-zinc-300">Bima Putra Wicaksono</p>
             <p className="mt-2 text-base text-zinc-400">Batu, East Java, Indonesia</p>
           </div>

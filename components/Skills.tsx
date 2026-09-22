@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { SectionLabel } from "@/components/SectionLabel";
 
 const skillGroups = [
   {
@@ -73,9 +74,9 @@ export function Skills() {
     >
       <div className="mb-10 flex items-center gap-3">
         <span className="h-px flex-1 bg-white/10" />
-        <p className="text-xs font-medium uppercase tracking-[0.24em] text-zinc-400">
+        <SectionLabel>
           WHAT I KNOW
-        </p>
+        </SectionLabel>
         <span className="h-px flex-1 bg-white/10" />
       </div>
 
