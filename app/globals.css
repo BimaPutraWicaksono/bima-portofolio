@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #fff8f0;
+  --pink: #fde2e4;
+  --lavender: #e0bbe4;
+  --babyblue: #cde7f0;
+  --mint: #d8f3dc;
+  --text: #6d6875;
+  --text-dark: #4a4453;
+  --white-glass: rgba(255, 255, 255, 0.6);
+  --white-glass-strong: rgba(255, 255, 255, 0.85);
+  --shadow-soft: 0 10px 30px rgba(160, 140, 190, 0.15);
+  --shadow-soft-lg: 0 20px 50px rgba(160, 140, 190, 0.22);
+  --radius-lg: 28px;
+  --radius-md: 20px;
+  --radius-sm: 14px;
+}
+
+@theme inline {
+  --color-background: var(--cream);
+  --color-foreground: var(--text-dark);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter);
+}
+
+html {
+  background: var(--cream);
+  color: var(--text-dark);
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 3% 8%, rgba(253, 226, 228, 0.58), transparent 24%),
+    radial-gradient(circle at 96% 32%, rgba(205, 231, 240, 0.58), transparent 26%),
+    linear-gradient(180deg, #fff8f0 0%, #fdf6fb 42%, #f4fafd 100%);
+  color: var(--text-dark);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--lavender);
+  color: #fff;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+a {
+  transition: all 180ms ease;
+}
+
+main section {
+  position: relative;
+  z-index: 2;
+  scroll-margin-top: 6rem;
+}
+
+main section > div {
+  max-width: 1200px;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+nav {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+.accent-text {
+  color: #a98fd9;
+}
+
+.reference-surface {
+  border-color: rgba(224, 187, 228, 0.45) !important;
+  background: rgba(255, 255, 255, 0.52) !important;
+  box-shadow: var(--shadow-soft);
+}
+
+.reference-gradient {
+  background: linear-gradient(90deg, #d68fa0, #a98fd9, #8fb8d9);
+  background-clip: text;
+  color: transparent;
+}
+
+main section:not(#home) {
+  max-width: none;
+  padding: 120px 8vw !important;
+}
+
+main section:not(#home) > div {
+  width: 100%;
+}
+
+main section:not(#home) h2 {
+  background: linear-gradient(90deg, #c89bc7, #9bb8d9);
+  background-clip: text;
+  color: transparent !important;
+}
+
+body .text-white,
+body .text-zinc-100,
+body .text-zinc-200,
+body .text-zinc-300 {
+  color: var(--text-dark) !important;
+}
+
+body .text-zinc-400,
+body .text-zinc-500 {
+  color: var(--text) !important;
+}
+
+body [class*="bg-[#10151a]"],
+body [class*="bg-[#111930]"],
+body [class*="bg-[#101a22]"] {
+  border-color: rgba(224, 187, 228, 0.42) !important;
+  background: rgba(255, 255, 255, 0.58) !important;
+  box-shadow: var(--shadow-soft);
+}
+
+body [class*="bg-[#0b1014]"],
+body [class*="bg-[#10171d]"],
+body [class*="bg-white/[0.02]"] {
+  background: rgba(255, 255, 255, 0.42) !important;
+}
+
+body [class*="border-white/10"] {
+  border-color: rgba(224, 187, 228, 0.4) !important;
+}
+
+body main section li > span:first-child {
+  background: #a98fd9 !important;
+}
+
+footer {
+  border-color: rgba(224, 187, 228, 0.35) !important;
+  background: rgba(255, 255, 255, 0.58) !important;
+  color: var(--text) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
