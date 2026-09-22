@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { startTransition, useEffect, useState } from "react";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -16,6 +16,21 @@ const navItems = [
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#home");
+  const [theme, setTheme] = useState<"blue" | "premium">("blue");
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("portfolio-theme");
+    const nextTheme = savedTheme === "premium" ? "premium" : "blue";
+
+    startTransition(() => setTheme(nextTheme));
+    document.documentElement.dataset.theme = nextTheme;
+  }, []);
+
+  const changeTheme = (nextTheme: "blue" | "premium") => {
+    setTheme(nextTheme);
+    document.documentElement.dataset.theme = nextTheme;
+    window.localStorage.setItem("portfolio-theme", nextTheme);
+  };
 
   useEffect(() => {
     const sections = navItems
@@ -49,7 +64,7 @@ export function Navbar() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#e0bbe4]/35 bg-white/65 shadow-[0_8px_30px_rgba(160,140,190,0.12)] backdrop-blur-xl">
+    <header className="theme-navbar sticky top-0 z-50">
       <div className="mx-auto flex max-w-[1300px] items-center justify-between px-4 py-4 sm:px-6 lg:px-[6vw]">
         <a href="#home" className="reference-gradient text-lg font-bold tracking-[0.01em] sm:text-xl">
           BIMA
@@ -63,8 +78,8 @@ export function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                  className={`relative px-0.5 py-1 text-sm font-medium transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-gradient-to-r after:from-[#e0bbe4] after:to-[#cde7f0] after:transition-all hover:text-[#a98fd9] hover:after:w-full ${
-                    isActive ? "text-[#a98fd9] after:w-full" : "text-[#6d6875]"
+                          className={`theme-nav-link relative px-0.5 py-1 text-sm font-medium transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-[var(--primary)] after:transition-all hover:after:w-full ${
+                            isActive ? "is-active after:w-full" : ""
                 }`}
               >
                 {item.label}
@@ -73,18 +88,37 @@ export function Navbar() {
           })}
         </nav>
 
+        <div className="theme-switcher" aria-label="Color theme selector" role="group">
+          <button
+            type="button"
+            className={`theme-switcher__button ${theme === "blue" ? "is-active" : ""}`}
+            aria-pressed={theme === "blue"}
+            onClick={() => changeTheme("blue")}
+          >
+            Blue
+          </button>
+          <button
+            type="button"
+            className={`theme-switcher__button ${theme === "premium" ? "is-active" : ""}`}
+            aria-pressed={theme === "premium"}
+            onClick={() => changeTheme("premium")}
+          >
+            Premium
+          </button>
+        </div>
+
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-full border border-[#e0bbe4]/50 bg-white/60 p-2 text-[#6d6875] transition-colors hover:border-[#a98fd9]/60 hover:bg-white md:hidden"
+          className="theme-menu-button inline-flex items-center justify-center rounded-full p-2 transition-colors md:hidden"
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((current) => !current)}
         >
           <span className="sr-only">Toggle navigation</span>
           <div className="flex w-5 flex-col gap-1.5">
-            <span className={`h-0.5 rounded-full bg-white transition-transform ${mobileOpen ? "translate-y-2 rotate-45" : ""}`} />
-            <span className={`h-0.5 rounded-full bg-white transition-opacity ${mobileOpen ? "opacity-0" : "opacity-100"}`} />
-            <span className={`h-0.5 rounded-full bg-white transition-transform ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+            <span className={`h-0.5 rounded-full bg-[var(--primary)] transition-transform ${mobileOpen ? "translate-y-2 rotate-45" : ""}`} />
+            <span className={`h-0.5 rounded-full bg-[var(--primary)] transition-opacity ${mobileOpen ? "opacity-0" : "opacity-100"}`} />
+            <span className={`h-0.5 rounded-full bg-[var(--primary)] transition-transform ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`} />
           </div>
         </button>
       </div>
@@ -97,7 +131,7 @@ export function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
             aria-label="Mobile navigation"
-            className="overflow-hidden border-t border-[#e0bbe4]/35 bg-white/95 md:hidden"
+            className="theme-mobile-menu overflow-hidden md:hidden"
           >
             <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4 sm:px-6">
               {navItems.map((item) => {
@@ -107,8 +141,8 @@ export function Navbar() {
                   <a
                     key={item.href}
                     href={item.href}
-                    className={`rounded-xl px-3 py-2 text-sm transition-colors ${
-                      isActive ? "bg-[#fde2e4] text-[#a98fd9]" : "text-[#6d6875] hover:bg-[#fdf6fb] hover:text-[#a98fd9]"
+                    className={`theme-mobile-link rounded-xl px-3 py-2 text-sm transition-colors ${
+                      isActive ? "is-active" : ""
                     }`}
                     onClick={() => setMobileOpen(false)}
                   >

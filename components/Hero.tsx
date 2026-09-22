@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -76,16 +77,16 @@ export function Hero() {
                 <span>Available</span>
               </div>
 
-              <div className="mt-6 rounded-[20px] border border-dashed border-[#e0bbe4]/50 bg-white/45 p-5">
-                <div className="flex h-56 w-full items-center justify-center rounded-[18px] border border-white/70 bg-gradient-to-br from-[#fde2e4] via-[#e0bbe4] to-[#cde7f0] text-center">
-                  <div className="flex flex-col items-center">
-                    <div className="mb-3 flex h-24 w-24 items-center justify-center rounded-full border-4 border-white/80 bg-white/45 text-[10px] uppercase tracking-[0.22em] text-[#6d6875] shadow-[0_10px_30px_rgba(160,140,190,0.15)]">
-                      Photo
-                    </div>
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#6d6875]">
-                      Profile placeholder
-                    </p>
-                  </div>
+              <div className="mt-6 overflow-hidden rounded-[20px] border border-white/70 bg-gradient-to-br from-[#fde2e4] via-[#e0bbe4] to-[#cde7f0] p-2 shadow-[0_14px_34px_rgba(160,140,190,0.16)]">
+                <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[16px]">
+                  <Image
+                    src="/images/profile/profile.jpg"
+                    alt="Bima Putra Wicaksono"
+                    fill
+                    sizes="(max-width: 1024px) 90vw, 420px"
+                    className="object-cover object-center"
+                    priority
+                  />
                 </div>
               </div>
 

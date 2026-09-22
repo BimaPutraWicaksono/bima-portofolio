@@ -5,7 +5,6 @@ import { motion, useReducedMotion } from "framer-motion";
 const skillGroups = [
   {
     title: "Core Skills",
-    accent: "border-zinc-500/40 bg-zinc-900/40",
     items: [
       "System Analysis",
       "Requirement Analysis",
@@ -21,7 +20,6 @@ const skillGroups = [
   },
   {
     title: "Technologies",
-    accent: "border-slate-500/40 bg-slate-900/40",
     items: [
       "Python",
       "Django",
@@ -48,7 +46,6 @@ const skillGroups = [
   },
   {
     title: "Professional Skills",
-    accent: "border-white/10 bg-white/[0.02]",
     items: [
       "Problem Solving",
       "Analytical Thinking",
@@ -90,14 +87,14 @@ export function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
-            className={`rounded-2xl border p-6 ${group.accent}`} 
+            className="theme-skill-card rounded-2xl border p-6"
           >
-            <h3 className="mb-5 text-lg font-semibold text-white">{group.title}</h3>
+            <h3 className="theme-card-heading mb-5 text-lg font-semibold">{group.title}</h3>
             <div className="flex flex-wrap gap-2.5">
               {group.items.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-2 text-sm text-zinc-200 transition-all duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.05]"
+                  className="theme-skill-chip rounded-full border px-3 py-2 text-sm transition-all duration-200 hover:-translate-y-0.5"
                 >
                   {item}
                 </span>
