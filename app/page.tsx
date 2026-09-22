@@ -199,10 +199,10 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <Education items={education} />
         <Experience items={experiences} />
         <Projects projects={featuredProjects} />
         <Skills />
-        <Education items={education} />
         <AdditionalExperience items={additionalExperience} />
         <Contact />
       </main>

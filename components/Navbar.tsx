@@ -32,6 +32,11 @@ export function Navbar() {
     window.localStorage.setItem("portfolio-theme", nextTheme);
   };
 
+  const handleNavigation = (href: string) => {
+    setActiveSection(href);
+    setMobileOpen(false);
+  };
+
   useEffect(() => {
     const sections = navItems
       .map((item) => document.querySelector(item.href))
@@ -78,9 +83,10 @@ export function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                          className={`theme-nav-link relative px-0.5 py-1 text-sm font-medium transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-[var(--primary)] after:transition-all hover:after:w-full ${
-                            isActive ? "is-active after:w-full" : ""
+                className={`theme-nav-link relative px-0.5 py-1 text-sm font-medium transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-[var(--primary)] after:transition-all hover:after:w-full ${
+                  isActive ? "is-active after:w-full" : ""
                 }`}
+                onClick={() => handleNavigation(item.href)}
               >
                 {item.label}
               </a>
@@ -144,7 +150,7 @@ export function Navbar() {
                     className={`theme-mobile-link rounded-xl px-3 py-2 text-sm transition-colors ${
                       isActive ? "is-active" : ""
                     }`}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={() => handleNavigation(item.href)}
                   >
                     {item.label}
                   </a>

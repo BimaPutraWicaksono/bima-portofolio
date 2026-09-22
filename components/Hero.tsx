@@ -50,8 +50,8 @@ export function Hero() {
               Contact Me
             </a>
             <a
-              href="/cv.pdf"
-              download
+              href="/cv/Bima%20Putra%20Wicaksono_CV%20ATS_IT.pdf"
+              download="Bima Putra Wicaksono_CV ATS_IT.pdf"
               className="inline-flex items-center justify-center rounded-full border border-[#a98fd9]/35 bg-transparent px-7 py-3.5 text-sm font-semibold text-[#a98fd9] transition-all hover:-translate-y-1 hover:bg-[#e0bbe4]/20"
             >
               Download CV
