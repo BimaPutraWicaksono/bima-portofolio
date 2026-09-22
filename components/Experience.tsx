@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { ImageCarousel } from "@/components/ImageCarousel";
 
 export type ExperienceItem = {
   company: string;
@@ -72,9 +73,10 @@ export function Experience({ items }: ExperienceProps) {
                   <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-[#e0bbe4] to-[#cde7f0] text-xs text-white">▧</span>
                   Experience Documentation
                 </div>
-                <div className="flex min-h-48 items-center justify-center rounded-[16px] border border-dashed border-[#e0bbe4]/55 bg-gradient-to-br from-[#fde2e4]/80 via-[#e0bbe4]/50 to-[#cde7f0]/70 p-6 text-center">
-                  <p className="text-sm font-medium text-[#6d6875]">Documentation area</p>
-                </div>
+                <ImageCarousel
+                  images={item.images ?? []}
+                  alt={`${item.company} experience`}
+                />
               </div>
             </div>
           </motion.article>

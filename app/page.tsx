@@ -16,7 +16,11 @@ const experiences = [
     location: "Pasuruan",
     period: "February 2026 – Present",
     role: "Admin Keuangan & Pengolahan Data | IT System Development",
-    images: [] as string[],
+    images: [
+      "/images/experience/koperasi/dashboard.svg",
+      "/images/experience/koperasi/members.svg",
+      "/images/experience/koperasi/validation.svg",
+    ],
     details: [
       "Analyzes operational and data requirements.",
       "Designs system structure, processes, interfaces, and administrative features using Laravel, React, Inertia.js, MySQL, and Tailwind CSS.",
@@ -31,7 +35,11 @@ const experiences = [
     location: "Mojokerto",
     period: "January – July 2025",
     role: "Software Developer / Web Developer",
-    images: [] as string[],
+    images: [
+      "/images/experience/mrp/requirements.svg",
+      "/images/experience/mrp/workflow.svg",
+      "/images/experience/mrp/uat.svg",
+    ],
     details: [
       "Analyzed and designed an MRP system for automotive wiring harness procurement.",
       "Analyzed business flows and functional requirements involving 7 user roles.",
@@ -47,7 +55,11 @@ const experiences = [
     location: "Mojokerto",
     period: "July – December 2024",
     role: "Web Developer – Maintenance & IT Intern",
-    images: [] as string[],
+    images: [
+      "/images/experience/autocomp/cml.svg",
+      "/images/experience/autocomp/ein.svg",
+      "/images/experience/autocomp/area-control.svg",
+    ],
     details: [
       "Developed CML, EIN, and Area Control applications through analysis, design, implementation, testing, and deployment.",
       "CML uses Python, Django, and PostgreSQL to calculate spare-part requirements based on production and machine loading data, including Excel import and dashboard functionality.",
@@ -62,7 +74,11 @@ const featuredProjects = [
   {
     title: "Cooperative Information System",
     technologies: ["Laravel", "React", "Inertia.js", "MySQL", "Tailwind CSS"],
-    images: [] as string[],
+    images: [
+      "/images/projects/cooperative-information-system/dashboard.svg",
+      "/images/projects/cooperative-information-system/members.svg",
+      "/images/projects/cooperative-information-system/cashflow.svg",
+    ],
     description:
       "A web-based cooperative information system focused on managing members, savings, loans, installments, deposits, and cash.",
     focus: [
@@ -78,7 +94,11 @@ const featuredProjects = [
   {
     title: "Material Requirement Planning System",
     technologies: ["Python", "Django", "PostgreSQL"],
-    images: [] as string[],
+    images: [
+      "/images/projects/material-requirement-planning/planning.svg",
+      "/images/projects/material-requirement-planning/procurement.svg",
+      "/images/projects/material-requirement-planning/status.svg",
+    ],
     description:
       "A web-based MRP system designed to support procurement and material planning processes for an automotive wiring harness manufacturing environment.",
     focus: [
@@ -98,7 +118,11 @@ const featuredProjects = [
   {
     title: "CML – Spare Part Requirement Calculation System",
     technologies: ["Python", "Django", "PostgreSQL"],
-    images: [] as string[],
+    images: [
+      "/images/projects/cml-spare-part/calculation.svg",
+      "/images/projects/cml-spare-part/excel-import.svg",
+      "/images/projects/cml-spare-part/dashboard.svg",
+    ],
     description:
       "A system for calculating spare-part requirements using production and machine loading data.",
     focus: [
@@ -113,7 +137,11 @@ const featuredProjects = [
   {
     title: "Engineering Integration Network (EIN)",
     technologies: ["PHP", "Laravel", "MySQL"],
-    images: [] as string[],
+    images: [
+      "/images/projects/engineering-integration-network/production.svg",
+      "/images/projects/engineering-integration-network/automation.svg",
+      "/images/projects/engineering-integration-network/activity.svg",
+    ],
     description:
       "A production data application designed to automate data processing and visualize machine activity.",
     focus: [

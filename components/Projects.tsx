@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import Image from "next/image";
+import { ImageCarousel } from "@/components/ImageCarousel";
 
 export type Project = {
   title: string;
@@ -46,30 +46,14 @@ export function Projects({ projects }: ProjectsProps) {
             whileHover={shouldReduceMotion ? undefined : { y: -4 }}
             className="group flex min-w-[min(86vw,420px)] snap-start flex-col overflow-hidden rounded-[28px] border border-white/10 bg-[#10151a] shadow-[0_16px_30px_rgba(160,140,190,0.12)] transition-all duration-200 hover:-translate-y-1 hover:border-[#e0bbe4]/70 hover:bg-[#111a17] sm:min-w-[390px] lg:min-w-[420px]"
           >
-            <div className="relative flex h-52 gap-3 overflow-x-auto border-b border-white/10 bg-gradient-to-br from-[#fde2e4] via-[#e0bbe4] to-[#cde7f0] p-3 snap-x snap-mandatory">
+            <div className="relative border-b border-white/10 bg-gradient-to-br from-[#fde2e4] via-[#e0bbe4] to-[#cde7f0] p-3">
               <span className="absolute left-4 top-4 rounded-full border border-white/80 bg-white/70 px-3 py-1 text-[10px] font-bold tracking-[0.12em] text-[#a98fd9] uppercase">
                 Project {index + 1}
               </span>
-              {project.images && project.images.length > 0 ? (
-                project.images.map((image, imageIndex) => (
-                  <div
-                    key={image}
-                    className="relative min-w-full snap-start overflow-hidden rounded-[18px] border border-white/70 bg-white/40"
-                  >
-                    <Image
-                      src={image}
-                      alt={`${project.title} documentation ${imageIndex + 1}`}
-                      fill
-                      sizes="(max-width: 640px) 86vw, 420px"
-                      className="object-cover"
-                    />
-                  </div>
-                ))
-              ) : (
-                <div className="flex min-w-full items-center justify-center rounded-[18px] border border-dashed border-white/70 bg-white/35 text-center">
-                  <span className="text-sm font-medium text-[#6d6875]">Project visual placeholder</span>
-                </div>
-              )}
+              <ImageCarousel
+                images={project.images ?? []}
+                alt={project.title}
+              />
             </div>
 
             <div className="flex flex-1 flex-col p-6">
