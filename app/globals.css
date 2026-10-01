@@ -215,7 +215,6 @@ main section > div { max-width: 1200px; }
 
 .image-carousel__viewport {
   position: relative;
-  aspect-ratio: 16 / 9;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 16px;

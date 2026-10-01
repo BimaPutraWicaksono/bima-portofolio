@@ -9,7 +9,6 @@ import { Navbar } from "@/components/Navbar";
 import { Projects } from "@/components/Projects";
 import { Skills } from "@/components/Skills";
 
-// Add real screenshot paths here only after files exist under public/images/experience/.
 const experiences = [
   {
     company: "Koperasi Simpan Pinjam Mitra Azzahwa",
@@ -17,9 +16,9 @@ const experiences = [
     period: "February 2026 – Present",
     role: "Admin Keuangan & Pengolahan Data | IT System Development",
     images: [
-      "/images/experience/koperasi/dashboard.svg",
-      "/images/experience/koperasi/members.svg",
-      "/images/experience/koperasi/validation.svg",
+      "/images/experience/koperasi/koperasi1.jpeg",
+      "/images/experience/koperasi/koperasi2.jpeg",
+      "/images/experience/koperasi/koperasi3.jpeg",
     ],
     details: [
       "Analyzes operational and data requirements.",
@@ -36,9 +35,9 @@ const experiences = [
     period: "January – July 2025",
     role: "Software Developer / Web Developer",
     images: [
-      "/images/experience/mrp/requirements.svg",
-      "/images/experience/mrp/workflow.svg",
-      "/images/experience/mrp/uat.svg",
+      "/images/experience/mrp/mrp1.png",
+      "/images/experience/mrp/mrp2.png",
+      "/images/experience/mrp/mrp3.png",
     ],
     details: [
       "Analyzed and designed an MRP system for automotive wiring harness procurement.",
@@ -56,9 +55,9 @@ const experiences = [
     period: "July – December 2024",
     role: "Web Developer – Maintenance & IT Intern",
     images: [
-      "/images/experience/autocomp/cml.svg",
-      "/images/experience/autocomp/ein.svg",
-      "/images/experience/autocomp/area-control.svg",
+      "/images/experience/autocomp/autocomp1.png",
+      "/images/experience/autocomp/autocomp2.png",
+      "/images/experience/autocomp/autocomp3.png",
     ],
     details: [
       "Developed CML, EIN, and Area Control applications through analysis, design, implementation, testing, and deployment.",
@@ -69,15 +68,14 @@ const experiences = [
   },
 ];
 
-// Add real screenshot paths here only after files exist under public/images/projects/.
 const featuredProjects = [
   {
     title: "Cooperative Information System",
     technologies: ["Laravel", "React", "Inertia.js", "MySQL", "Tailwind CSS"],
     images: [
-      "/images/projects/cooperative-information-system/dashboard.svg",
-      "/images/projects/cooperative-information-system/members.svg",
-      "/images/projects/cooperative-information-system/cashflow.svg",
+      "/images/projects/cooperative-information-system/cooperative-information-system1.jpeg",
+      "/images/projects/cooperative-information-system/cooperative-information-system2.jpeg",
+      "/images/projects/cooperative-information-system/cooperative-information-system3.jpeg",
     ],
     description:
       "A web-based cooperative information system focused on managing members, savings, loans, installments, deposits, and cash.",
@@ -95,9 +93,9 @@ const featuredProjects = [
     title: "Material Requirement Planning System",
     technologies: ["Python", "Django", "PostgreSQL"],
     images: [
-      "/images/projects/material-requirement-planning/planning.svg",
-      "/images/projects/material-requirement-planning/procurement.svg",
-      "/images/projects/material-requirement-planning/status.svg",
+      "/images/projects/material-requirement-planning/material-requirement-planning1.png",
+      "/images/projects/material-requirement-planning/material-requirement-planning2.png",
+      "/images/projects/material-requirement-planning/material-requirement-planning3.png",
     ],
     description:
       "A web-based MRP system designed to support procurement and material planning processes for an automotive wiring harness manufacturing environment.",
@@ -119,9 +117,9 @@ const featuredProjects = [
     title: "CML – Spare Part Requirement Calculation System",
     technologies: ["Python", "Django", "PostgreSQL"],
     images: [
-      "/images/projects/cml-spare-part/calculation.svg",
-      "/images/projects/cml-spare-part/excel-import.svg",
-      "/images/projects/cml-spare-part/dashboard.svg",
+      "/images/projects/cml-spare-part/cml-spare-part1.png",
+      "/images/projects/cml-spare-part/cml-spare-part2.jpg",
+      "/images/projects/cml-spare-part/cml-spare-part3.jpg",
     ],
     description:
       "A system for calculating spare-part requirements using production and machine loading data.",
@@ -138,9 +136,8 @@ const featuredProjects = [
     title: "Engineering Integration Network (EIN)",
     technologies: ["PHP", "Laravel", "MySQL"],
     images: [
-      "/images/projects/engineering-integration-network/production.svg",
-      "/images/projects/engineering-integration-network/automation.svg",
-      "/images/projects/engineering-integration-network/activity.svg",
+      "/images/projects/engineering-integration-network/engineering-integration-network1.jpg",
+      "/images/projects/engineering-integration-network/engineering-integration-network2.jpg",
     ],
     description:
       "A production data application designed to automate data processing and visualize machine activity.",
@@ -154,12 +151,12 @@ const featuredProjects = [
 ];
 
 const education = [
-  // Education documentation belongs in public/images/education/.
   {
     school: "Politeknik Negeri Malang",
     degree: "D4 Teknik Informatika",
     period: "August 2021 – July 2025",
     gpa: "3.65/4.00",
+    images: ["/images/education/education1.jpeg", "/images/education/education2.png"],
     thesis: '"Pengembangan Sistem Material Requirement Planning Berbasis Web di PT XYZ Indonesia"',
     relevantAreas: [
       "Database Management",
@@ -175,13 +172,11 @@ const education = [
 ];
 
 const additionalExperience = [
-  // Organization and event documentation belongs in public/images/organization/.
   {
     title: "Zaafarani Perfume",
     location: "Batu",
     period: "July 2020 – January 2026",
     role: "Owner – Operational / Production / Marketing",
-    images: ["/images/organization/zaafarani.svg"],
     details: [
       "Managed operations, production, stock, sales, administration, finance, and suppliers.",
       "Managed 10–15 product variants.",
@@ -193,7 +188,12 @@ const additionalExperience = [
     location: "Malang",
     period: "March 2023 – February 2024",
     role: "Head of External Affairs – Steering Committee",
-    images: ["/images/organization/hmti.svg"],
+    images: [
+      "/images/organization/Head%20of%20External%20Affairs%20%E2%80%93%20Steering%20Committee/Head%20of%20External%20Affairs%20%E2%80%93%20Steering%20Committee1.png",
+      "/images/organization/Head%20of%20External%20Affairs%20%E2%80%93%20Steering%20Committee/Head%20of%20External%20Affairs%20%E2%80%93%20Steering%20Committee2.png",
+      "/images/organization/Head%20of%20External%20Affairs%20%E2%80%93%20Steering%20Committee/Head%20of%20External%20Affairs%20%E2%80%93%20Steering%20Committee3.png",
+      "/images/organization/Head%20of%20External%20Affairs%20%E2%80%93%20Steering%20Committee/Head%20of%20External%20Affairs%20%E2%80%93%20Steering%20Committee4.png",
+    ],
     details: [
       "Led 2 programs and 8 agendas.",
       "Participated in 5+ committees.",
@@ -205,7 +205,11 @@ const additionalExperience = [
     location: "Malang",
     period: "March 2022 – February 2023",
     role: "Organizing Committee",
-    images: ["/images/organization/dialog-dosen.svg", "/images/organization/hmti.svg"],
+    images: [
+      "/images/organization/Organizing%20Committee/Organizing%20Committee1.png",
+      "/images/organization/Organizing%20Committee/Organizing%20Committee2.png",
+      "/images/organization/Organizing%20Committee/Organizing%20Committee3.png",
+    ],
     details: [
       "Chief organizer of Dialog Dosen Mahasiswa involving 70+ students, 35+ lecturers, and 80+ committee members.",
       "Field coordinator for Malam Keakraban involving 195+ participants and 80+ committee members.",
@@ -216,7 +220,12 @@ const additionalExperience = [
     location: "Batu",
     period: "December 2024 – January 2025",
     role: "MC",
-    images: ["/images/organization/event.svg"],
+    images: [
+      "/images/organization/MC/MC1.png",
+      "/images/organization/MC/MC2.png",
+      "/images/organization/MC/MC3.png",
+      "/images/organization/MC/MC4.png",
+    ],
     details: [
       "Hosted the event for 7,000+ attendees.",
     ],

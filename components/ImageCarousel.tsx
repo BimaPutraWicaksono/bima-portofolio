@@ -11,6 +11,7 @@ type ImageCarouselProps = {
 
 export function ImageCarousel({ images, alt, className = "" }: ImageCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [imageRatios, setImageRatios] = useState<Record<string, number>>({});
 
   useEffect(() => {
     if (images.length < 2) return;
@@ -34,9 +35,12 @@ export function ImageCarousel({ images, alt, className = "" }: ImageCarouselProp
     setActiveIndex((current) => (current + 1) % images.length);
   };
 
+  const activeImage = images[activeIndex];
+  const activeRatio = imageRatios[activeImage] ?? 16 / 9;
+
   return (
     <div className={`image-carousel ${className}`}>
-      <div className="image-carousel__viewport">
+      <div className="image-carousel__viewport" style={{ aspectRatio: activeRatio }}>
         {images.map((image, index) => (
           <div
             key={image}
@@ -48,8 +52,15 @@ export function ImageCarousel({ images, alt, className = "" }: ImageCarouselProp
               alt={`${alt} documentation ${index + 1}`}
               fill
               sizes="(max-width: 1024px) 90vw, 520px"
-              className="object-cover"
+              className="object-contain"
               priority={index === 0}
+              onLoad={(event) => {
+                const { naturalWidth, naturalHeight } = event.currentTarget;
+                setImageRatios((ratios) => ({
+                  ...ratios,
+                  [image]: naturalWidth / naturalHeight,
+                }));
+              }}
             />
           </div>
         ))}
@@ -57,10 +68,10 @@ export function ImageCarousel({ images, alt, className = "" }: ImageCarouselProp
         {images.length > 1 ? (
           <>
             <button type="button" className="image-carousel__arrow image-carousel__arrow--previous" onClick={previous} aria-label="Previous image">
-              &#8592;
+              ‹
             </button>
             <button type="button" className="image-carousel__arrow image-carousel__arrow--next" onClick={next} aria-label="Next image">
-              &#8594;
+              ›
             </button>
           </>
         ) : null}

@@ -78,13 +78,13 @@ export function Hero() {
               </div>
 
               <div className="mt-6 overflow-hidden rounded-[20px] border border-white/70 bg-gradient-to-br from-[#fde2e4] via-[#e0bbe4] to-[#cde7f0] p-2 shadow-[0_14px_34px_rgba(160,140,190,0.16)]">
-                <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[16px]">
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[16px]">
                   <Image
-                    src="/images/profile/profile.jpg"
+                    src="/images/profile/Bima%20Putra%20Wicaksono_Photo%20Porto.png"
                     alt="Bima Putra Wicaksono"
                     fill
                     sizes="(max-width: 1024px) 90vw, 420px"
-                    className="object-cover object-center"
+                    className="object-contain object-center"
                     priority
                   />
                 </div>
