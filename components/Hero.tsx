@@ -87,7 +87,7 @@ export function Hero({ identity, content, labels, profileImage }: HeroProps) {
                 <span>{content.availability}</span>
               </div>
 
-              <div className="mt-6 overflow-hidden rounded-[20px] border border-white/70 bg-gradient-to-br from-[#fde2e4] via-[#e0bbe4] to-[#cde7f0] p-2 shadow-[0_14px_34px_rgba(160,140,190,0.16)]">
+              <div className="mx-auto mt-6 w-[70%] overflow-hidden rounded-[20px] border border-white/70 bg-gradient-to-br from-[#fde2e4] via-[#e0bbe4] to-[#cde7f0] p-2 shadow-[0_14px_34px_rgba(160,140,190,0.16)]">
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[16px]">
                   <Image
                     src={profileImage}

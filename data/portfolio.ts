@@ -3,7 +3,7 @@ export const portfolio = {
     language: "en",
     title: "Bima Putra Wicaksono | Information Technology",
     description:
-      "Information Technology portfolio of Bima Putra Wicaksono, focused on system analysis, application support, system development, data processing, and business process digitalization.",
+      "Information Technology portfolio of Bima Putra Wicaksono, focused on system analysis, application development, data processing, and business process digitalization.",
   },
   identity: {
     name: "Bima Putra Wicaksono",
@@ -11,7 +11,7 @@ export const portfolio = {
     field: "Information Technology",
     role: "System Analysis • Application Support • System Development",
     summary:
-      "I build and improve information systems by connecting business processes, data, and technology.",
+      "I develop information systems and support business processes through data and technology.",
     location: "Batu, East Java, Indonesia",
     cvHref: "/cv/Bima%20Putra%20Wicaksono_CV%20ATS_IT.pdf",
     cvDownloadName: "Bima Putra Wicaksono_CV ATS_IT.pdf",
@@ -63,32 +63,32 @@ export const portfolio = {
   },
   about: {
     paragraphs: [
-      "IT graduate with experience in information systems development, requirements analysis, data processing, and business process digitalization across cooperative and manufacturing environments.",
-      "Experience includes analyzing user requirements, mapping business processes, developing web applications, managing databases, testing and troubleshooting systems, and supporting system implementation.",
+      "Informatics Engineering graduate with experience in system development, requirements analysis, and data processing in cooperative and manufacturing environments.",
+      "Experienced in analyzing requirements, developing web applications, managing databases, testing systems, and supporting business process digitalization.",
     ],
     focusAreas: [
       {
         title: "Information Systems",
-        text: "Developing and improving information systems to support business needs and operational clarity.",
+        text: "Developing information systems to support business operations.",
       },
       {
         title: "Business Process",
-        text: "Mapping workflows, analyzing requirements, and digitalizing process steps across cooperative and manufacturing operations.",
+        text: "Analyzing workflows and digitalizing cooperative and manufacturing processes.",
       },
       {
         title: "Data & Application",
-        text: "Managing databases, processing data, and building web applications that connect business logic with practical use.",
+        text: "Managing data and developing practical web applications.",
       },
       {
         title: "Testing & Implementation",
-        text: "Testing systems, troubleshooting issues, and supporting successful implementation across functional environments.",
+        text: "Testing systems, troubleshooting issues, and supporting implementation.",
       },
     ],
     quickInfo: [
       {
         monogram: "ED",
         label: "Education",
-        value: "D4 Teknik Informatika · Politeknik Negeri Malang",
+        value: "Applied Bachelor’s in Informatics Engineering · Politeknik Negeri Malang",
       },
       {
         monogram: "IT",
@@ -111,13 +111,10 @@ export const portfolio = {
       thesis: '"Pengembangan Sistem Material Requirement Planning Berbasis Web di PT XYZ Indonesia"',
       relevantAreas: [
         "Database Management",
-        "Data Analytics",
-        "Web Programming",
-        "Algorithms & Data Structures",
-        "Operating Systems",
-        "UI Design",
-        "Critical Thinking & Problem Solving",
-        "Software Development with AI",
+        "Software Engineering",
+        "Management Information Systems",
+        "Business Intelligence",
+        "Advanced Web Programming",
       ],
     },
   ],
@@ -126,14 +123,12 @@ export const portfolio = {
       company: "Koperasi Simpan Pinjam Mitra Azzahwa",
       location: "Pasuruan",
       period: "February 2026 – Present",
-      role: "Admin Keuangan & Pengolahan Data | IT System Development",
+      role: "Finance Administration & Data Processing | IT System Development",
       details: [
-        "Analyzes operational and data requirements.",
-        "Designs system structure, processes, interfaces, and administrative features using Laravel, React, Inertia.js, MySQL, and Tailwind CSS.",
-        "Develops modules for members, savings, loans, installments, deposits, and cash management.",
-        "Implements CRUD operations, database management, validation, roles, and permissions.",
-        "Performs testing and feature evaluation.",
-        "Standardizes Excel-based data and supports administrative, bookkeeping, and data digitalization processes.",
+        "Analyzes cooperative operational needs and designs system workflows, interfaces, and administrative features.",
+        "Develops member, savings, loan, installment, deposit, and cash management modules using Laravel, React, Inertia.js, MySQL, and Tailwind CSS.",
+        "Applies database management, data validation, roles, and permissions.",
+        "Tests and improves features, standardizes Excel data, and supports administrative and bookkeeping digitalization.",
       ],
     },
     {
@@ -142,25 +137,21 @@ export const portfolio = {
       period: "January – July 2025",
       role: "Software Developer / Web Developer",
       details: [
-        "Analyzed and designed an MRP system for automotive wiring harness procurement.",
-        "Analyzed business flows and functional requirements involving 7 user roles.",
-        "Developed procurement workflow using Python, Django, and PostgreSQL.",
-        "Workflow includes Purchase Request, approval, Purchase Order, supplier confirmation, delivery, and order status.",
+        "Analyzed requirements and designed an MRP system for automotive wiring harness procurement, covering business workflows and 7 user roles.",
+        "Developed procurement workflows using Python, Django, and PostgreSQL, from Purchase Request and approval to Purchase Order, supplier confirmation, and delivery.",
         "Integrated part requirements with production data.",
-        "Performed testing, UAT, deployment, and evaluation.",
-        "SUS score: 87.61.",
+        "Performed testing, User Acceptance Testing (UAT), deployment, and system evaluation; achieved a SUS score of 87.61.",
       ],
     },
     {
       company: "PT Surabaya Autocomp Indonesia",
       location: "Mojokerto",
       period: "July – December 2024",
-      role: "Web Developer – Maintenance & IT Intern",
+      role: "Web Developer – Maintenance & Information Technology Intern",
       details: [
-        "Developed CML, EIN, and Area Control applications through analysis, design, implementation, testing, and deployment.",
-        "CML uses Python, Django, and PostgreSQL to calculate spare-part requirements based on production and machine loading data, including Excel import and dashboard functionality.",
-        "EIN uses PHP, Laravel, and MySQL to automate production data processing and visualize machine activity.",
-        "Area Control digitizes area inspections and problem logging.",
+        "Developed CML, Engineering Integration Network (EIN), and Area Control through requirements analysis, design, implementation, testing, and deployment.",
+        "Built CML using Python, Django, and PostgreSQL to calculate spare-part requirements from production and machine loading data, with Excel import and dashboard features.",
+        "Developed EIN using PHP, Laravel, and MySQL to automate production data processing and visualize machine activity; developed Area Control for area inspections and issue logging.",
       ],
     },
   ],
@@ -287,11 +278,11 @@ export const portfolio = {
       title: "Zaafarani Perfume",
       location: "Batu",
       period: "July 2020 – January 2026",
-      role: "Owner – Operational / Production / Marketing",
+      role: "Owner – Operations, Production & Marketing",
       details: [
-        "Managed operations, production, stock, sales, administration, finance, and suppliers.",
-        "Managed 10–15 product variants.",
-        "Monitored sales trends, cash flow, procurement, and supplier negotiations.",
+        "Managed business operations, production, marketing, inventory, sales, administration, finance, and supplier relations.",
+        "Managed 10–15 product variants and monitored stock availability.",
+        "Analyzed sales trends and cash flow, and handled procurement and supplier negotiations.",
       ],
     },
     {
@@ -300,9 +291,9 @@ export const portfolio = {
       period: "March 2023 – February 2024",
       role: "Head of External Affairs – Steering Committee",
       details: [
-        "Led 2 programs and 8 agendas.",
-        "Participated in 5+ committees.",
-        "Conducted a student aspiration survey involving 1,662 students, with 68% participation.",
+        "Led 2 work programs and 8 agendas, and coordinated with lecturers across 5+ committees.",
+        "Coordinated with lecturers across 5+ committees.",
+        "Collected and communicated student feedback through a survey with 68% participation from 1,662 students.",
       ],
     },
     {
@@ -311,16 +302,16 @@ export const portfolio = {
       period: "March 2022 – February 2023",
       role: "Organizing Committee",
       details: [
-        "Chief organizer of Dialog Dosen Mahasiswa involving 70+ students, 35+ lecturers, and 80+ committee members.",
-        "Field coordinator for Malam Keakraban involving 195+ participants and 80+ committee members.",
+        "Led the organizing committee for a student–lecturer dialogue with 70+ students, 35+ lecturers, and 80+ committee members.",
+        "Coordinated field operations for a student gathering with 195+ participants and 80+ committee members.",
       ],
     },
     {
       title: "Family Gathering PT Surabaya Autocomp Indonesia",
       location: "Batu",
       period: "December 2024 – January 2025",
-      role: "MC",
-      details: ["Hosted the event for 7,000+ attendees."],
+      role: "Master of Ceremony",
+      details: ["Hosted a company family gathering attended by 7,000+ people."],
     },
   ],
   contact: {

@@ -64,7 +64,7 @@ export function Experience({ items, sectionLabel, documentationLabel }: Experien
                 <ul className="space-y-3 text-base leading-7 text-zinc-300">
                   {item.details.map((detail) => (
                     <li key={detail} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-zinc-400" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400" />
                       <span>{detail}</span>
                     </li>
                   ))}
