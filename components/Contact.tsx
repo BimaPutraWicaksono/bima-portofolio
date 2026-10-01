@@ -2,8 +2,17 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { SectionLabel } from "@/components/SectionLabel";
+import type { PortfolioContent } from "@/data/portfolio";
 
-export function Contact() {
+type ContactProps = {
+  identity: PortfolioContent["identity"];
+  content: PortfolioContent["contact"];
+  label: string;
+  eyebrow: string;
+  headline: string;
+};
+
+export function Contact({ identity, content, label, eyebrow, headline }: ContactProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -19,7 +28,7 @@ export function Contact() {
         <div className="mb-8 flex items-center gap-3">
           <span className="h-px flex-1 bg-white/10" />
           <SectionLabel>
-            LET&apos;S CONNECT
+            {label}
           </SectionLabel>
           <span className="h-px flex-1 bg-white/10" />
         </div>
@@ -27,7 +36,7 @@ export function Contact() {
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-400">
-              Let&apos;s connect
+              {eyebrow}
             </p>
             <motion.h2
               initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
@@ -36,24 +45,24 @@ export function Contact() {
               transition={{ duration: 0.55, delay: 0.08, ease: "easeOut" }}
               className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl lg:text-[2.6rem]"
             >
-              Let&apos;s build something useful.
+              {headline}
             </motion.h2>
-            <p className="mt-4 text-lg text-zinc-300">Bima Putra Wicaksono</p>
-            <p className="mt-2 text-base text-zinc-400">Batu, East Java, Indonesia</p>
+            <p className="mt-4 text-lg text-zinc-300">{identity.name}</p>
+            <p className="mt-2 text-base text-zinc-400">{identity.location}</p>
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row">
             <a
-              href="mailto:bimaaapw@gmail.com"
+              href={`mailto:${content.email}`}
               className="inline-flex items-center justify-center rounded-full border border-white/10 bg-[#b7f397] px-5 py-3 text-sm font-medium text-[#10150e] transition-colors hover:bg-[#d2ffb9]"
             >
-              bimaaapw@gmail.com
+              {content.email}
             </a>
             <a
-              href="tel:+6281230377917"
+              href={`tel:${content.phone}`}
               className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-zinc-100 transition-colors hover:border-white/20 hover:bg-white/10"
             >
-              +6281230377917
+              {content.phone}
             </a>
           </div>
         </div>

@@ -2,65 +2,14 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { SectionLabel } from "@/components/SectionLabel";
+import type { PortfolioContent } from "@/data/portfolio";
 
-const skillGroups = [
-  {
-    title: "Core Skills",
-    items: [
-      "System Analysis",
-      "Requirement Analysis",
-      "Business Process Analysis",
-      "Software Development",
-      "Database Management",
-      "Data Processing",
-      "System Testing",
-      "Troubleshooting",
-      "Application Deployment",
-      "Technical Documentation",
-    ],
-  },
-  {
-    title: "Technologies",
-    items: [
-      "Python",
-      "Django",
-      "PHP",
-      "Laravel",
-      "JavaScript",
-      "React",
-      "Inertia.js",
-      "PostgreSQL",
-      "MySQL",
-      "SQL",
-      "Excel",
-      "HTML",
-      "CSS",
-      "Tailwind CSS",
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Draw.io",
-      "Figma",
-      "Linux",
-      "Ubuntu Server",
-    ],
-  },
-  {
-    title: "Professional Skills",
-    items: [
-      "Problem Solving",
-      "Analytical Thinking",
-      "Critical Thinking",
-      "Communication",
-      "Teamwork",
-      "Collaboration",
-      "Attention to Detail",
-      "Adaptability",
-    ],
-  },
-];
+type SkillsProps = {
+  groups: PortfolioContent["skills"];
+  sectionLabel: string;
+};
 
-export function Skills() {
+export function Skills({ groups, sectionLabel }: SkillsProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -75,13 +24,13 @@ export function Skills() {
       <div className="mb-10 flex items-center gap-3">
         <span className="h-px flex-1 bg-white/10" />
         <SectionLabel>
-          WHAT I KNOW
+          {sectionLabel}
         </SectionLabel>
         <span className="h-px flex-1 bg-white/10" />
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
-        {skillGroups.map((group, index) => (
+        {groups.map((group, index) => (
           <motion.div
             key={group.title}
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}

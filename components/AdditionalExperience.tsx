@@ -15,9 +15,11 @@ export type AdditionalExperienceItem = {
 
 type AdditionalExperienceProps = {
   items: AdditionalExperienceItem[];
+  sectionLabel: string;
+  documentationLabel: string;
 };
 
-export function AdditionalExperience({ items }: AdditionalExperienceProps) {
+export function AdditionalExperience({ items, sectionLabel, documentationLabel }: AdditionalExperienceProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -32,7 +34,7 @@ export function AdditionalExperience({ items }: AdditionalExperienceProps) {
       <div className="mb-10 flex items-center gap-3">
         <span className="h-px flex-1 bg-white/10" />
         <SectionLabel>
-          ORGANIZATION
+          {sectionLabel}
         </SectionLabel>
         <span className="h-px flex-1 bg-white/10" />
       </div>
@@ -67,7 +69,7 @@ export function AdditionalExperience({ items }: AdditionalExperienceProps) {
             </div>
 
             <div className="organization-card__media">
-              <p className="organization-card__media-label">Documentation</p>
+              <p className="organization-card__media-label">{documentationLabel}</p>
               <ImageCarousel images={item.images ?? []} alt={`${item.title} organization`} />
             </div>
           </motion.article>

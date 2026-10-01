@@ -2,18 +2,16 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { startTransition, useEffect, useState } from "react";
+import type { PortfolioContent } from "@/data/portfolio";
 
-const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
-];
+type NavbarProps = {
+  brand: string;
+  items: PortfolioContent["navigation"];
+  themeLabels: PortfolioContent["themeLabels"];
+  navigationLabel: string;
+};
 
-export function Navbar() {
+export function Navbar({ brand, items, themeLabels, navigationLabel }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#home");
   const [theme, setTheme] = useState<"blue" | "premium">("blue");
@@ -38,7 +36,7 @@ export function Navbar() {
   };
 
   useEffect(() => {
-    const sections = navItems
+    const sections = items
       .map((item) => document.querySelector(item.href))
       .filter(Boolean) as Element[];
 
@@ -58,7 +56,7 @@ export function Navbar() {
     sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
-  }, []);
+  }, [items]);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -72,11 +70,11 @@ export function Navbar() {
     <header className="theme-navbar sticky top-0 z-50">
       <div className="mx-auto flex max-w-[1300px] items-center justify-between px-4 py-4 sm:px-6 lg:px-[6vw]">
         <a href="#home" className="reference-gradient text-lg font-bold tracking-[0.01em] sm:text-xl">
-          BIMA
+          {brand}
         </a>
 
-        <nav aria-label="Main navigation" className="hidden items-center gap-6 md:flex">
-          {navItems.map((item) => {
+        <nav aria-label={navigationLabel} className="hidden items-center gap-6 md:flex">
+          {items.map((item) => {
             const isActive = activeSection === item.href;
 
             return (
@@ -101,7 +99,7 @@ export function Navbar() {
             aria-pressed={theme === "blue"}
             onClick={() => changeTheme("blue")}
           >
-            Blue
+              {themeLabels.blue}
           </button>
           <button
             type="button"
@@ -109,7 +107,7 @@ export function Navbar() {
             aria-pressed={theme === "premium"}
             onClick={() => changeTheme("premium")}
           >
-            Premium
+              {themeLabels.premium}
           </button>
         </div>
 
@@ -136,11 +134,11 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            aria-label="Mobile navigation"
+            aria-label={navigationLabel}
             className="theme-mobile-menu overflow-hidden md:hidden"
           >
             <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4 sm:px-6">
-              {navItems.map((item) => {
+              {items.map((item) => {
                 const isActive = activeSection === item.href;
 
                 return (

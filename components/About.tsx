@@ -2,27 +2,14 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { SectionLabel } from "@/components/SectionLabel";
+import type { PortfolioContent } from "@/data/portfolio";
 
-const focusAreas = [
-  {
-    title: "Information Systems",
-    text: "Developing and improving information systems to support business needs and operational clarity.",
-  },
-  {
-    title: "Business Process",
-    text: "Mapping workflows, analyzing requirements, and digitalizing process steps across cooperative and manufacturing operations.",
-  },
-  {
-    title: "Data & Application",
-    text: "Managing databases, processing data, and building web applications that connect business logic with practical use.",
-  },
-  {
-    title: "Testing & Implementation",
-    text: "Testing systems, troubleshooting issues, and supporting successful implementation across functional environments.",
-  },
-];
+type AboutProps = {
+  content: PortfolioContent["about"];
+  labels: Pick<PortfolioContent["labels"], "aboutSection" | "aboutHeading" | "quickInfoHeading">;
+};
 
-export function About() {
+export function About({ content, labels }: AboutProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -37,7 +24,7 @@ export function About() {
       <div className="mb-10 flex items-center gap-3">
         <span className="h-px flex-1 bg-white/10" />
         <SectionLabel>
-          GET TO KNOW ME
+          {labels.aboutSection}
         </SectionLabel>
         <span className="h-px flex-1 bg-white/10" />
       </div>
@@ -51,23 +38,19 @@ export function About() {
             transition={{ duration: 0.55, delay: 0.08, ease: "easeOut" }}
             className="mb-6 text-4xl font-semibold tracking-[-0.06em] text-white sm:text-5xl lg:text-[2.8rem]"
           >
-            About Me
+            {labels.aboutHeading}
           </motion.h2>
           <div className="space-y-5 text-base leading-8 text-zinc-300">
             <p>
-              IT graduate with experience in information systems development,
-              requirements analysis, data processing, and business process
-              digitalization across cooperative and manufacturing environments.
+              {content.paragraphs[0]}
             </p>
             <p>
-              Experience includes analyzing user requirements, mapping business
-              processes, developing web applications, managing databases, testing
-              and troubleshooting systems, and supporting system implementation.
+              {content.paragraphs[1]}
             </p>
           </div>
 
           <div className="mt-7 flex flex-wrap gap-2.5">
-            {focusAreas.map((area) => (
+            {content.focusAreas.map((area) => (
               <span
                 key={area.title}
                 className="rounded-full border border-[#e0bbe4]/50 bg-white/65 px-3.5 py-2 text-sm font-medium text-[#6d6875] shadow-[0_6px_16px_rgba(160,140,190,0.08)]"
@@ -79,20 +62,14 @@ export function About() {
         </div>
 
         <div className="reference-surface rounded-[28px] p-7 sm:p-8">
-          <h3 className="mb-5 text-lg font-bold text-[#4a4453]">Quick Info</h3>
+          <h3 className="mb-5 text-lg font-bold text-[#4a4453]">{labels.quickInfoHeading}</h3>
           <div className="divide-y divide-[#e0bbe4]/35">
-            <div className="flex gap-4 py-4 first:pt-0">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#e0bbe4] to-[#cde7f0] text-sm text-white">ED</span>
-              <div><p className="text-[10px] font-bold tracking-[0.14em] text-[#a98fd9] uppercase">Education</p><p className="text-sm text-[#4a4453]">D4 Teknik Informatika · Politeknik Negeri Malang</p></div>
-            </div>
-            <div className="flex gap-4 py-4">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#fde2e4] to-[#e0bbe4] text-sm text-white">IT</span>
-              <div><p className="text-[10px] font-bold tracking-[0.14em] text-[#a98fd9] uppercase">Focus</p><p className="text-sm text-[#4a4453]">Information Technology · System Analysis</p></div>
-            </div>
-            <div className="flex gap-4 py-4">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#d8f3dc] to-[#cde7f0] text-sm text-white">LO</span>
-              <div><p className="text-[10px] font-bold tracking-[0.14em] text-[#a98fd9] uppercase">Location</p><p className="text-sm text-[#4a4453]">Batu, East Java, Indonesia</p></div>
-            </div>
+            {content.quickInfo.map((item) => (
+              <div key={item.label} className="flex gap-4 py-4 first:pt-0">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#e0bbe4] to-[#cde7f0] text-sm text-white">{item.monogram}</span>
+                <div><p className="text-[10px] font-bold tracking-[0.14em] text-[#a98fd9] uppercase">{item.label}</p><p className="text-sm text-[#4a4453]">{item.value}</p></div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
+import { portfolio } from "@/data/portfolio";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,15 +15,14 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Bima Putra Wicaksono | Information Technology",
-  description:
-    "Information Technology portfolio of Bima Putra Wicaksono, focused on system analysis, application support, system development, data processing, and business process digitalization.",
+  title: portfolio.site.title,
+  description: portfolio.site.description,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang={portfolio.site.language}
       className={`${inter.variable} ${poppins.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full">{children}</body>

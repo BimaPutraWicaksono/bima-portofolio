@@ -14,9 +14,12 @@ export type Project = {
 
 type ProjectsProps = {
   projects: Project[];
+  sectionLabel: string;
+  badgeLabel: string;
+  focusLabel: string;
 };
 
-export function Projects({ projects }: ProjectsProps) {
+export function Projects({ projects, sectionLabel, badgeLabel, focusLabel }: ProjectsProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -31,7 +34,7 @@ export function Projects({ projects }: ProjectsProps) {
       <div className="mb-10 flex items-center gap-3">
         <span className="h-px flex-1 bg-white/10" />
         <SectionLabel>
-          MY WORK
+          {sectionLabel}
         </SectionLabel>
         <span className="h-px flex-1 bg-white/10" />
       </div>
@@ -49,7 +52,7 @@ export function Projects({ projects }: ProjectsProps) {
           >
             <div className="relative border-b border-white/10 bg-gradient-to-br from-[#fde2e4] via-[#e0bbe4] to-[#cde7f0] p-3">
               <span className="absolute left-4 top-4 rounded-full border border-white/80 bg-white/70 px-3 py-1 text-[10px] font-bold tracking-[0.12em] text-[#a98fd9] uppercase">
-                Project {index + 1}
+                {badgeLabel} {index + 1}
               </span>
               <ImageCarousel
                 images={project.images ?? []}
@@ -63,7 +66,7 @@ export function Projects({ projects }: ProjectsProps) {
 
               <div className="mt-5 flex-1">
                 <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-zinc-400">
-                  Key focus
+                  {focusLabel}
                 </p>
                 <ul className="space-y-2 text-sm leading-6 text-zinc-300">
                   {project.focus.map((item) => (

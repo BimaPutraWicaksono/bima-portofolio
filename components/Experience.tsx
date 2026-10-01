@@ -15,9 +15,11 @@ export type ExperienceItem = {
 
 type ExperienceProps = {
   items: ExperienceItem[];
+  sectionLabel: string;
+  documentationLabel: string;
 };
 
-export function Experience({ items }: ExperienceProps) {
+export function Experience({ items, sectionLabel, documentationLabel }: ExperienceProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -32,7 +34,7 @@ export function Experience({ items }: ExperienceProps) {
       <div className="mb-10 flex items-center gap-3">
         <span className="h-px flex-1 bg-white/10" />
         <SectionLabel>
-          CAREER JOURNEY
+          {sectionLabel}
         </SectionLabel>
         <span className="h-px flex-1 bg-white/10" />
       </div>
@@ -72,7 +74,7 @@ export function Experience({ items }: ExperienceProps) {
               <div className="rounded-[20px] border border-white/10 bg-[#0b1014] p-4">
                 <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-white">
                   <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-[#e0bbe4] to-[#cde7f0] text-xs text-white">▧</span>
-                  Experience Documentation
+                  {documentationLabel}
                 </div>
                 <ImageCarousel
                   images={item.images ?? []}

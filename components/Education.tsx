@@ -16,9 +16,21 @@ export type EducationItem = {
 
 type EducationProps = {
   items: EducationItem[];
+  sectionLabel: string;
+  documentationLabel: string;
+  thesisLabel: string;
+  areasLabel: string;
+  gpaLabel: string;
 };
 
-export function Education({ items }: EducationProps) {
+export function Education({
+  items,
+  sectionLabel,
+  documentationLabel,
+  thesisLabel,
+  areasLabel,
+  gpaLabel,
+}: EducationProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -33,7 +45,7 @@ export function Education({ items }: EducationProps) {
       <div className="mb-10 flex items-center gap-3">
         <span className="h-px flex-1 bg-white/10" />
         <SectionLabel>
-          EDUCATION
+          {sectionLabel}
         </SectionLabel>
         <span className="h-px flex-1 bg-white/10" />
       </div>
@@ -57,14 +69,14 @@ export function Education({ items }: EducationProps) {
                   </div>
                   <div className="text-left md:text-right">
                     <p className="text-sm text-zinc-400">{item.period}</p>
-                    {item.gpa ? <p className="mt-1 text-sm text-zinc-300">GPA {item.gpa}</p> : null}
+                    {item.gpa ? <p className="mt-1 text-sm text-zinc-300">{gpaLabel} {item.gpa}</p> : null}
                   </div>
                 </div>
 
                 {item.thesis ? (
                   <div className="mb-6 rounded-xl border border-white/10 bg-white/[0.02] p-4">
                     <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-400">
-                      Thesis
+                      {thesisLabel}
                     </p>
                     <p className="mt-2 text-base italic text-zinc-200">{item.thesis}</p>
                   </div>
@@ -73,7 +85,7 @@ export function Education({ items }: EducationProps) {
                 {item.relevantAreas ? (
                   <div>
                     <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-zinc-400">
-                      Relevant academic areas
+                      {areasLabel}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {item.relevantAreas.map((area) => (
@@ -91,7 +103,7 @@ export function Education({ items }: EducationProps) {
 
               {item.images?.length ? (
                 <div className="rounded-[20px] border border-white/10 bg-[#0b1014] p-4">
-                  <p className="mb-4 text-sm font-semibold text-white">Education Documentation</p>
+                  <p className="mb-4 text-sm font-semibold text-white">{documentationLabel}</p>
                   <ImageCarousel images={item.images} alt={`${item.school} education`} />
                 </div>
               ) : null}
